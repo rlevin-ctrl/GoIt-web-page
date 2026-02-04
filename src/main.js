@@ -14,17 +14,23 @@ import { renderFavoritesItems } from './js/services/favorites.js';
 
 function main() {
   changeInteranlLinksBaseURL();
-
   renderQuoteOfTheDay();
 
   document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
 
-    if (path === '/' || path === '/your-energy/') {
+    if (
+      path === '/' ||
+      path.endsWith('/GoIt-web-page/') ||
+      path.endsWith('/GoIt-web-page')
+    ) {
       init();
     }
 
-    if (path === '/favorites' || path === '/your-energy/favorites') {
+    if (
+      path.endsWith('/favorites') ||
+      path.endsWith('/GoIt-web-page/favorites')
+    ) {
       renderFavoritesItems();
     }
 
