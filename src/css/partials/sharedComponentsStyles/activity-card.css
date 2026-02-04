@@ -1,0 +1,70 @@
+﻿.activity-card {
+  width: 335px;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px 20px 20px 70px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+
+  max-width: 350px;
+}
+
+@media (min-width: 768px) {
+  .activity-card {
+    width: 400px;
+    padding: 40px 40px 40px 90px;
+
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .activity-card {
+    width: 444px;
+
+    max-width: 360px;
+  }
+}
+
+.activity-card-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+@media (min-width: 768px) {
+  .activity-card-icon {
+    top: 41px;
+    left: 40px;
+  }
+}
+
+.activity-card-icon img {
+  width: 34px;
+  height: 32px;
+}
+
+.activity-card-time {
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.activity-card-title,
+.activity-card-time {
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.activity-card-text {
+  max-width: 300px;
+  line-height: 1.45;
+  word-wrap: break-word;
+}

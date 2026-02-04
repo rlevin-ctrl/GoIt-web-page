@@ -1,0 +1,236 @@
+.footer {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 45px 0 10px;
+
+  @media (min-width: 768px) {
+    padding: 64px 0 16px;
+  }
+
+  .footer-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+
+    @media (min-width: 768px) {
+      padding: 0 32px;
+    }
+  }
+
+  .row {
+    display: grid;
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    max-width: 335px;
+    margin: 0 auto;
+
+
+    .col-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &.footer-ending {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-row-gap: 10px;
+
+      .col-1 {
+        grid-area: 1 / 1 / 2 / 4;
+      }
+      .col-2 {
+        grid-area: 2 / 1 / 3 / 3;
+      }
+      .col-3 {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+    }
+
+    @media (min-width: 768px) {
+      max-width: unset;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      .col-1 {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      .col-2 {
+        grid-area: 1 / 2 / 2 / 4;
+      }
+      .col-3 {
+        grid-area: 2 / 2 / 3 / 4;
+      }
+
+      &.footer-ending {
+        .col-1 {
+          grid-area: 1 / 1 / 2 / 2;
+        }
+        .col-2 {
+          grid-area: 1 / 2 / 2 / 3;
+        }
+        .col-3 {
+          grid-area: 1 / 3 / 2 / 4;
+        }
+      }
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: 1fr;
+
+      .col-1 {
+        grid-area: 1 / 1 / 2 / 3;
+      }
+      .col-2 {
+        grid-area: 1 / 3 / 2 / 7;
+      }
+      .col-3 {
+        grid-area: 1 / 7 / 2 / 10;
+      }
+
+      &.footer-ending {
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: 1fr;
+
+        .col-1 {
+          grid-area: 1 / 1 / 2 / 3;
+        }
+        .col-2 {
+          grid-area: 1 / 3 / 2 / 7;
+        }
+        .col-3 {
+          grid-area: 1 / 7 / 2 / 10;
+        }
+      }
+    }
+  }
+
+  .logo {
+    svg {
+      color: var(--bg-color);
+      fill: currentColor;
+    }
+  }
+
+  .socials {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border: 1px solid rgba(244, 244, 244, 0.1);
+    border-radius: 8px;
+    transition: 0.4s;
+  }
+
+  .socials a:hover {
+    border: 1px solid rgba(244, 244, 244, 0.6);
+  }
+
+  .socials a svg {
+    width: 20px;
+    height: 20px;
+    opacity: 80;
+    color: var(--bg-color);
+    fill: currentColor;
+
+    @media (min-width: 768px) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .heading {
+    display: inline-block;
+    font-size: 38px;
+    line-height: 44px;
+    font-weight: 400;
+    max-width: 595px;
+
+    @media (min-width: 768px) {
+      font-size: 56px;
+      line-height: 60px;
+      letter-spacing: 1.64px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 352px;
+
+    @media (min-width: 1440px) {
+      margin-left: auto;
+      margin-right: 40px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 1.33;
+      }
+    }
+
+    input {
+      border: 1px solid var(--bg-color);
+      background-color: transparent;
+      border-radius: 30px;
+      height: 38px;
+      box-sizing: border-box;
+      padding: 0px 14px;
+      color: var(--bg-color);
+      width: 100%;
+
+      &::placeholder {
+        color: rgba(244, 244, 244, 0.6);
+      }
+
+      &[type='submit'] {
+        cursor: pointer;
+        color: var(--accent-color);
+        background-color: var(--bg-color);
+        transition: 0.4s;
+        height: 38px;
+
+        &:hover {
+          color: var(--bg-color);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .footer-ending {
+    margin-top: 120px;
+    color: rgba(198, 205, 209, 0.9);
+
+    @media (min-width: 768px) {
+      margin-top: 70px;
+    }
+
+    .policy-links a:hover {
+      text-decoration: underline;
+    }
+
+    .year {
+      max-width: 352px;
+      margin-left: auto;
+      text-align: right;
+
+      @media (min-width: 1440px) {
+        text-align: left;
+        margin-right: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+﻿<section class="home-section">
+  <div class="container home-main-container">
+
+    <div class="home-header">
+      <div class="title-wrapper">
+        <h2 class="home-title">Exercises</h2>
+        <p class="current-category-name"></p>
+      </div>
+
+      <div class="filters-wrapper">
+        <form class="search">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search..."
+            class="search-input"
+            name="search"
+          >
+          <button class="input-btn" type="submit">
+            <svg class="search-icon" width="18" height="18">
+              <use href="/img/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </form>
+
+        <div class="filters">
+          <button class="filter-btn active" data-type="Muscles">Muscles</button>
+          <button class="filter-btn" data-type="Body parts">Body parts</button>
+          <button class="filter-btn" data-type="Equipment">Equipment</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+
+      <!-- LEFT SIDE: QUOTE + IMAGE + ACTIVITY CARD -->
+      <aside class="encourage-section">
+
+        <div class="quote-wrapper">
+          <load src="/partials/sharedComponents/quoteOfTheDay.html" />
+
+          <div class="encourage-img-container">
+            <img
+              class="encourage-img"
+              src="/img/quote_1x.png"
+              srcset="/img/quote_1x.png 1x, /img/quote_2x.png 2x"
+              alt="Women sportswear taking break from workout"
+            >
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <span class="activity-card-icon">
+            <img src="/img/time-home-gantel-icon.svg" alt="Gantel">
+          </span>
+
+          <p class="activity-card-time">110 min</p>
+          <p class="activity-card-title">Daily norm of sports</p>
+
+          <p class="activity-card-text">
+            The World Health Organization recommends at least 150 minutes of
+            moderate-intensity aerobic physical activity throughout the week for
+            adults aged 18–64. However, what happens if we adjust that number to
+            110 minutes every day? While it might seem like a high number to hit,
+            dedicating 110 minutes daily to sporting activities may offer
+            unparalleled benefits to physical health, mental well-being, and
+            overall quality of life.
+          </p>
+        </div>
+
+      </aside>
+
+      <div class="cards-wrapper">
+        <ul class="cards-container" id="exercise-cards-container"></ul>
+        <load src="/partials/sharedComponents/pagination.html" />
+      </div>
+
+    </div>
+  </div>
+</section>
