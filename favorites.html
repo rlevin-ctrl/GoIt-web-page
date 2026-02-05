@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/GoIt-web-page/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+  <title>YourEnergy | Favorites</title>
+  <script type="module" crossorigin src="/GoIt-web-page/assets/vendor-CLb_lYsF.js"></script>
+  <script type="module" crossorigin src="/GoIt-web-page/assets/main-DsU4HZjH.js"></script>
+  <link rel="stylesheet" crossorigin href="/GoIt-web-page/assets/main-CLUWuZUZ.css">
+</head>
+<body>
+<div class="wrapper">
+  <header class="header-section">
+  <div class="container">
+    <div class="header-container">
+
+      <a href="/" class="logo">
+        <svg width="132" height="24">
+          <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#your-energy"></use>
+        </svg>
+      </a>
+
+      <button type="button" class="burger-btn js-burger-button" id="burger">
+        <svg width="32" height="32">
+          <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#burger"></use>
+        </svg>
+      </button>
+
+      <nav class="header-desktop-nav">
+        ﻿<ul class="nav-links header">
+  <li class="nav-item">
+    <a class="nav-link" href="./">Home</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="./favorites">Favorites</a>
+  </li>
+</ul>
+
+      </nav>
+
+      <div class="header-socials">
+        ﻿<ul class="socials-list header">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Facebook page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Instagram page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT YouTube channel"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+  <main class="main">
+    ﻿<div class="favorites-wrapper">
+  <div class="container favorites-section-wrapper">
+
+    <h1 class="favorites-section-title">Favorites</h1>
+
+    <div class="desktop-favorites-section">
+
+      <div class="left-section-part">
+
+        ﻿<div class="quote-day-card">
+	<span class="quote-icon-running">
+		<img
+      src="./img/quote_icon_1.svg"
+      width="34"
+      height="32"
+      alt="Running Icon"
+    >
+	</span>
+
+  <div class="quote-day-card-content">
+    <h2 class="quote-day-card-title">Quote of the day</h2>
+    <p class="quote-day-card-text"></p>
+    <p class="quote-day-card-author"></p>
+  </div>
+
+  <span class="quote-icon-mark">
+		<img
+      src="./img/qoute_icon_2.svg"
+      width="20"
+      height="20"
+      alt="Quotation Mark"
+    >
+	</span>
+</div>
+
+
+        <div class="favorites-row">
+
+          <div class="activity-card favorites-activity-card">
+            <span class="activity-card-icon">
+             <img src="/GoIt-web-page/img/time-home-gantel-icon.svg" alt="Gantel">
+            </span>
+
+            <p class="activity-card-time">110 min</p>
+            <p class="activity-card-title">Daily norm of sports</p>
+          </div>
+
+          <div class="favorites-image-wrapper">
+            <img
+              class="favorites-image"
+              src="/GoIt-web-page/img/quote_1x.png"
+              srcset="/GoIt-web-page/img/quote_1x.png 1x, /GoIt-web-page/img/quote_2x.png 2x"
+              alt="People training outdoors"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="right-section-part">
+        <div class="workout-list-wrapper">
+
+          <p class="not-items-message" hidden>
+            It appears that you haven't added any exercises to your
+            favorites yet. To get started, you can add exercises
+            that you like to your favorites for easier access in the
+            future.
+          </p>
+
+          <ul class="workout-list" id="exercise-cards-container"></ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </main>
+
+  <footer class="footer">
+  <div class="container footer-container">
+
+    <div class="row">
+
+      <div class="col-1">
+        <a class="logo" href="#">
+          <svg width="132" height="24">
+            <use href="/GoIt-web-page/img/sprite.svg#your-energy"></use>
+          </svg>
+        </a>
+
+        ﻿<ul class="socials-list socials">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Facebook page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Instagram page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT YouTube channel"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+      </div>
+
+      <div class="col-2">
+        <h3 class="heading">
+          Transforming your <i>body</i> shape with us
+        </h3>
+      </div>
+
+      <div class="col-3">
+        <form id="subscribe-form">
+          <p>Subscribe and learn about new exercises!</p>
+
+          <div class="input">
+            <input
+              type="text"
+              name="email"
+              required
+              pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              placeholder="Email"
+            >
+          </div>
+
+          <div class="input">
+            <input type="submit" value="Send">
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-ending row">
+
+      <div class="col-1">
+        <p>YourEnergy. All rights reserved.</p>
+      </div>
+
+      <div class="col-2">
+        <p class="policy-links">
+          <a href="#">Privacy Policy</a> /
+          <a href="#">Terms of Service</a>
+        </p>
+      </div>
+
+      <div class="col-3">
+        <p class="year">©2023</p>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+  ﻿<button
+  class="scroll-to-top-btn invisible js-scroll-to-top-btn"
+  aria-label="Scroll to top"
+>
+  <svg class="scroll-to-top-img" width="24" height="24">
+    <use href="/GoIt-web-page/img/sprite.svg#arrow-to-top-right"></use>
+  </svg>
+</button>
+
+</div>
+
+﻿<div class="mobile-backdrop mobile-backdrop-js">
+  <div class="mobile-menu-panel mobile-menu-js">
+
+    <button class="mobile-menu-close-btn mobile-menu-close-js" type="button">
+      <svg class="mobile-menu-close-icon" width="32" height="32">
+        <use href="/GoIt-web-page/img/sprite.svg#x"></use>
+      </svg>
+    </button>
+
+    <nav class="mobile-menu-nav">
+      ﻿<ul class="nav-links mobile-menu">
+  <li class="nav-item">
+    <a class="nav-link" href="./">Home</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="./favorites">Favorites</a>
+  </li>
+</ul>
+
+      ﻿<ul class="socials-list mobile-menu">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Facebook page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT Instagram page"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Go to GoIT YouTube channel"
+    >
+      <svg
+        class="socials-icon"
+        aria-hidden="true"
+        focusable="false"
+        width="28"
+        height="28"
+      >
+        <use href="/GoIt-web-page/img/sprite.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+    </nav>
+
+  </div>
+</div>
+
+﻿<div id="exerciseModal" class="modal hidden">
+  <div class="modal-content" id="exerciseModalContent">
+		<span class="close-button" id="closeModalBtn">
+			<svg>
+				<use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#close"></use>
+			</svg>
+		</span>
+    <div class="modal-data">
+      <div class="img-container">
+        <img
+          id="modalImage"
+          src="https://ftp.goit.study/img/power-pulse/gifs/0003.gif"
+          alt=""
+        >
+      </div>
+      <div class="text-container">
+        <div>
+          <h2 id="modalTitle">Air bake</h2>
+          <div class="rating-container">
+            <span id="modalRating">4.0</span>
+            <div class="stars">
+              <svg class="star">
+                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+              </svg>
+              <svg class="star">
+                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+              </svg>
+              <svg class="star">
+                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+              </svg>
+              <svg class="star">
+                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+              </svg>
+              <svg class="star">
+                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <ul class="info-container">
+          <li class="info">
+            <h3>Target</h3>
+            <p id="modalTarget">Cardiovascular system</p>
+          </li>
+          <li class="info">
+            <h3>Body Part</h3>
+            <p id="modalBodyPart">Cardio</p>
+          </li>
+          <li class="info">
+            <h3>Equipment</h3>
+            <p id="modalEquipment">Leverage machine</p>
+          </li>
+          <li class="info">
+            <h3>Popular</h3>
+            <p id="modalPopular">0</p>
+          </li>
+          <li class="info">
+            <h3>Burned calories</h3>
+            <p id="modalCalories">116/3 min</p>
+          </li>
+        </ul>
+        <p id="modalDescription" class="description">
+          While not a muscle, this system is essential for endurance training.
+          Aerobic exercises like running, cycling, and swimming improve
+          cardiovascular health.
+        </p>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button id="favoriteButton" class="modal-btn add-fav-btn" aria-label="Add to favorites">
+        Add to favorites
+        <svg>
+          <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#heart"></use>
+        </svg>
+      </button>
+      <button id="ratingButton" class="modal-btn add-rate-btn" aria-label="Rate this exercise">
+        Give a rating
+      </button>
+    </div>
+  </div>
+</div>
+
+﻿<div class="modal hidden" id="ratingModal">
+  <div class="rating-modal" data-modal="rating">
+    <button class="close-rating" data-modal-close aria-label="Close">
+      <svg>
+        <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#close"></use>
+      </svg>
+    </button>
+
+    <h3>Rating</h3>
+
+    <form id="rating-form">
+      <div class="rating-group">
+        <div class="rating-value">0.0</div>
+        <div class="rating-stars">
+          <input type="radio" id="star-5" name="rating" value="5">
+          <label for="star-5"
+          ><svg class="star-icon">
+            <use href="/GoIt-web-page/img/sprite.svg#star"></use></svg
+          ></label>
+
+          <input type="radio" id="star-4" name="rating" value="4">
+          <label for="star-4"
+          ><svg class="star-icon">
+            <use href="/GoIt-web-page/img/sprite.svg#star"></use></svg
+          ></label>
+
+          <input type="radio" id="star-3" name="rating" value="3">
+          <label for="star-3"
+          ><svg class="star-icon">
+            <use href="/GoIt-web-page/img/sprite.svg#star"></use></svg
+          ></label>
+
+          <input type="radio" id="star-2" name="rating" value="2">
+          <label for="star-2"
+          ><svg class="star-icon">
+            <use href="/GoIt-web-page/img/sprite.svg#star"></use></svg
+          ></label>
+
+          <input type="radio" id="star-1" name="rating" value="1">
+          <label for="star-1"
+          ><svg class="star-icon">
+            <use href="/GoIt-web-page/img/sprite.svg#star"></use></svg
+          ></label>
+        </div>
+      </div>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+      >
+
+      <textarea
+        name="comment"
+        placeholder="Your comment"
+        required
+      ></textarea>
+
+      <button data-modal-rating-send type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>
