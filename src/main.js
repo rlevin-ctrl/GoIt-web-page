@@ -12,44 +12,60 @@ import { changeInteranlLinksBaseURL } from './js/config/internalLinksHandler.js'
 import { renderQuoteOfTheDay } from './js/sharedComponents/quoteOfTheDay.js';
 import { renderFavoritesItems } from './js/services/favorites.js';
 
+function runPage() {
+  const path = window.location.pathname;
+
+  const isHome =
+    path === '/' ||
+    path.endsWith('/index.html') ||
+    path.endsWith('/GoIt-web-page/') ||
+    path.endsWith('/GoIt-web-page/index.html');
+
+  const isFavorites =
+    path.endsWith('/favorites.html') ||
+    path.endsWith('/GoIt-web-page/favorites.html');
+
+  if (isHome) {
+    init();
+  }
+
+  if (isFavorites) {
+    renderFavoritesItems();
+  }
+
+  setActiveLink();
+
+  const subscribeForm = document.querySelector('#subscribe-form');
+  if (subscribeForm && !subscribeForm.dataset.bound) {
+    subscribeForm.dataset.bound = 'true';
+    subscribeForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      try {
+        const email = subscribeForm.email.value;
+        await handleSubscription(email);
+        subscribeForm.reset();
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  }
+}
+
 function main() {
   changeInteranlLinksBaseURL();
   renderQuoteOfTheDay();
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const path = window.location.pathname;
+  const boot = () => runPage();
 
-    if (
-      path === '/' ||
-      path.endsWith('/GoIt-web-page/') ||
-      path.endsWith('/GoIt-web-page')
-    ) {
-      init();
-    }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
+  }
 
-    if (
-      path.endsWith('/favorites') ||
-      path.endsWith('/GoIt-web-page/favorites')
-    ) {
-      renderFavoritesItems();
-    }
+  window.addEventListener('popstate', runPage);
 
-    setActiveLink();
-
-    const subscribeForm = document.querySelector('#subscribe-form');
-    if (subscribeForm) {
-      subscribeForm.addEventListener('submit', async event => {
-        event.preventDefault();
-        try {
-          const email = subscribeForm.email.value;
-          await handleSubscription(email);
-          subscribeForm.reset();
-        } catch (error) {
-          console.log(error);
-        }
-      });
-    }
-  });
+  window.addEventListener('app:navigated', runPage);
 
   mobileMenuRefs.burgerButton.addEventListener('click', mobileMenu.openMobileMenu);
   mobileMenuRefs.closeButton.addEventListener('click', mobileMenu.closeMenu);
