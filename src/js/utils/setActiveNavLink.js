@@ -15,14 +15,23 @@
 
 export const setActiveLink = () => {
   const links = document.querySelectorAll('.nav-link');
-  const currentPath = window.location.pathname;
 
-  const normalize = path => path.replace(/\/index\.html$/, "/");
+  const currentPath = window.location.pathname
+    .replace('/GoIt-web-page', '')
+    .replace(/\/index\.html$/, '/')
+    .replace(/\/$/, '/index.html');
 
   links.forEach(link => {
-    const linkPath = getPathnameFromHref(link);
+    let linkPath = getPathnameFromHref(link);
 
-    if (linkPath && normalize(linkPath) === normalize(currentPath)) {
+    if (!linkPath) return;
+
+    linkPath = linkPath
+      .replace('/GoIt-web-page', '')
+      .replace(/\/index\.html$/, '/')
+      .replace(/\/$/, '/index.html');
+
+    if (linkPath === currentPath) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
