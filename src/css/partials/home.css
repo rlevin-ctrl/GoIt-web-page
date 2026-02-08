@@ -214,25 +214,24 @@
 
   @media (min-width: 768px) {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
-    gap: 20px 18px; /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: 20px вертикально, 18px горизонтально (було 12px) */
+    gap: 20px 18px;
   }
 }
 
-/* ДЛЯ EXERCISE CARDS */
 .cards-container:has(.exercise-card) .exercise-card {
   @media (min-width: 768px) and (max-width: 1439px) {
-    width: calc(50% - 9px); /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: було calc(50% - 6px) */
+    width: calc(50% - 9px);
   }
 
   @media (min-width: 1440px) {
-    width: calc(33.333% - 12px); /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: було calc(33.333% - 8px) */
+    width: calc(33.333% - 12px);
   }
 }
 
-/* ФІКС: при 776-778px - 1 колонка */
 @media (min-width: 776px) and (max-width: 778px) {
   .cards-container:has(.exercise-card) {
     flex-direction: column;
@@ -245,7 +244,6 @@
   }
 }
 
-/* ДЛЯ CATEGORY CARDS */
 .cards-container:has(.category-card) {
   @media (min-width: 768px) {
     height: 996px;
@@ -256,7 +254,6 @@
   }
 }
 
-/* ДЛЯ WORKOUT CARDS - ФІКС: 2 колонки на планшеті та десктопі */
 .cards-container:has(.workout-list-item) {
   @media (min-width: 768px) {
     display: flex !important;
@@ -264,23 +261,21 @@
     flex-wrap: wrap !important;
     justify-content: flex-start;
     align-content: flex-start;
-    gap: 20px 18px; /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: 20px вертикально, 18px горизонтально */
+    gap: 20px 18px;
   }
 }
 
 .cards-container:has(.workout-list-item) .workout-list-item {
-  /* На мобільних - 1 колонка (за замовчуванням) */
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    width: calc(50% - 9px); /* ← 2 колонки на планшеті */
+    width: calc(50% - 9px);
   }
 
   @media (min-width: 1440px) {
-    width: calc(50% - 9px); /* ← 2 колонки на десктопі */
+    width: calc(50% - 9px);
   }
 }
 
-/* ДЛЯ WORKOUT CARDS НА ГОЛОВНІЙ СТОРІНЦІ (клас workout-card) */
 .cards-container:has(.workout-card) {
   @media (min-width: 768px) {
     display: flex !important;
