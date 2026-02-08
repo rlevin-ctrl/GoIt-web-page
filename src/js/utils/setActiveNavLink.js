@@ -16,22 +16,18 @@
 export const setActiveLink = () => {
   const links = document.querySelectorAll('.nav-link');
 
-  const currentPath = window.location.pathname
-    .replace('/GoIt-web-page', '')
-    .replace(/\/index\.html$/, '/')
-    .replace(/\/$/, '/index.html');
+  const currentPath = window.location.pathname.replace(/\/$/, '/index.html');
 
   links.forEach(link => {
     let linkPath = getPathnameFromHref(link);
 
     if (!linkPath) return;
 
-    linkPath = linkPath
-      .replace('/GoIt-web-page', '')
-      .replace(/\/index\.html$/, '/')
-      .replace(/\/$/, '/index.html');
+    linkPath = linkPath.replace(/\/$/, '/index.html');
 
-    if (linkPath === currentPath) {
+    linkPath = linkPath.replace('/GoIt-web-page', '');
+
+    if (currentPath.endsWith(linkPath)) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
