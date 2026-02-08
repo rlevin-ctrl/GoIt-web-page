@@ -23,7 +23,7 @@ YourEnergy — це навчальний проєкт, створений у м�
 - **HTML / CSS / JavaScript**
 - **Vite**
 - **Modular JS (import/export)**
----**GitHub Pages**
+- **GitHub Pages**
 
 ---
 
