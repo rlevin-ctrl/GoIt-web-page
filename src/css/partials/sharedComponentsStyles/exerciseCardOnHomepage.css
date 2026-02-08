@@ -11,7 +11,6 @@
   list-style: none;
 }
 
-/* Перевизначення для category cards */
 .cards-container:has(.category-card) {
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, auto) !important;
@@ -31,7 +30,6 @@
   }
 }
 
-/* Перевизначення для category cards */
 .cards-container:has(.category-card) {
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, auto) !important;
