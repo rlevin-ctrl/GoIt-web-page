@@ -44,11 +44,11 @@
       <nav class="header-desktop-nav">
         ﻿<ul class="nav-links header">
   <li class="nav-item">
-    <a class="nav-link {= $page === 'home' ? 'active' : '' }" href="./index.html">Home</a>
+    <a class="nav-link {= $page.includes('index') ? 'active' : '' }" href="./index.html">Home</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link {= $page === 'favorites' ? 'active' : '' }" href="./favorites.html">Favorites</a>
+    <a class="nav-link {= $page.includes('favorites') ? 'active' : '' }" href="./favorites.html">Favorites</a>
   </li>
 </ul>
 
@@ -567,11 +567,11 @@
     <nav class="mobile-menu-nav">
       ﻿<ul class="nav-links mobile-menu">
   <li class="nav-item">
-    <a class="nav-link {= $page === 'home' ? 'active' : '' }" href="./index.html">Home</a>
+    <a class="nav-link {= $page.includes('index') ? 'active' : '' }" href="./index.html">Home</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link {= $page === 'favorites' ? 'active' : '' }" href="./favorites.html">Favorites</a>
+    <a class="nav-link {= $page.includes('favorites') ? 'active' : '' }" href="./favorites.html">Favorites</a>
   </li>
 </ul>
 
