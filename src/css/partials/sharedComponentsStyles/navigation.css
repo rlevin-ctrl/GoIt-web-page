@@ -60,6 +60,5 @@
 
 .nav-link.active {
   background: var(--bg-color);
-
   color: var(--accent-color);
 }

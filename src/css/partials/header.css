@@ -1,69 +1,70 @@
 .header-section {
-  margin-top: 12px;
-
-  @media (min-width: 768px) {
-    margin-top: 16px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-top: 20px;
-  }
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  width: 100%;
-  gap: 32px;
+  justify-content: space-between;
+  position: relative;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  height: 24px;
-  flex-shrink: 0;
+  z-index: 1;
 }
 
 .burger-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger-btn svg {
   width: 32px;
   height: 32px;
-  flex-shrink: 0;
+  stroke: #000;
+  fill: none;
+  display: block;
+}
 
-  @media (min-width: 768px) {
+.burger-btn:hover {
+  opacity: 0.8;
+}
+
+.burger-btn:hover svg {
+  stroke: #333;
+}
+
+@media (min-width: 768px) {
+  .burger-btn {
     display: none;
   }
 }
 
 .header-desktop-nav {
   display: none;
+}
 
-  @media (min-width: 768px) {
-    display: flex;
-
-    flex: 1;
-    margin-left: 45px;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 768px) {
+  .header-desktop-nav {
+    display: block;
   }
 }
 
 .header-socials {
   display: none;
+}
 
-  @media (min-width: 768px) {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-shrink: 0;
+@media (min-width: 768px) {
+  .header-socials {
+    display: block;
   }
 }

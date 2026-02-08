@@ -23,8 +23,8 @@
 
   @media (min-width: 1440px) {
     flex-direction: row;
-    justify-content: space-between;
     gap: 0;
+    justify-content: space-between;
   }
 }
 
@@ -54,6 +54,7 @@
   color: rgba(36, 36, 36, 0.5);
   font-size: 20px;
   line-height: 1;
+  letter-spacing: -0.02em;
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -68,8 +69,8 @@
 
   @media (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
     gap: 0;
+    justify-content: space-between;
   }
 
   @media (min-width: 1440px) {
@@ -84,17 +85,20 @@
 
 .search-input {
   width: 100%;
+  max-width: 100%;
   padding: 12px 46px 12px 14px;
-  border: 2px solid var(--accent-color);
+  border: 1px solid var(--accent-color);
   border-radius: 30px;
   background-color: transparent;
   color: var(--accent-color);
   font-size: 14px;
+  box-sizing: border-box;
+  transition: box-shadow var(--fast-trns);
 
   @media (min-width: 768px) {
     width: 273px;
-    height: 48px;
     font-size: 16px;
+    height: 48px;
   }
 }
 
@@ -106,6 +110,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.search-icon {
+  stroke: currentColor;
+  fill: transparent;
 }
 
 .filters {
@@ -126,6 +138,9 @@
   font-size: 14px;
   line-height: 1.43;
   transition: color var(--fast-trns);
+  background: transparent;
+  border: none;
+  padding: 0;
 
   @media (min-width: 768px) {
     height: 32px;
@@ -151,27 +166,141 @@
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color);
+  transform: scaleX(1);
+  transform-origin: left;
   animation: underlineSlide 0.5s forwards;
 }
 
 @keyframes underlineSlide {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
 
   @media (min-width: 768px) {
-    gap: 64px;
+    gap: 100px;
   }
 
   @media (min-width: 1440px) {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 32px;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 64px;
+  }
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    gap: 4px;
+  }
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 20px 18px; /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: 20px вертикально, 18px горизонтально (було 12px) */
+  }
+}
+
+/* ДЛЯ EXERCISE CARDS */
+.cards-container:has(.exercise-card) .exercise-card {
+  @media (min-width: 768px) and (max-width: 1439px) {
+    width: calc(50% - 9px); /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: було calc(50% - 6px) */
+  }
+
+  @media (min-width: 1440px) {
+    width: calc(33.333% - 12px); /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: було calc(33.333% - 8px) */
+  }
+}
+
+/* ФІКС: при 776-778px - 1 колонка */
+@media (min-width: 776px) and (max-width: 778px) {
+  .cards-container:has(.exercise-card) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5px;
+  }
+
+  .cards-container:has(.exercise-card) .exercise-card {
+    width: 100%;
+  }
+}
+
+/* ДЛЯ CATEGORY CARDS */
+.cards-container:has(.category-card) {
+  @media (min-width: 768px) {
+    height: 996px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 1064px;
+  }
+}
+
+/* ДЛЯ WORKOUT CARDS - ФІКС: 2 колонки на планшеті та десктопі */
+.cards-container:has(.workout-list-item) {
+  @media (min-width: 768px) {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 20px 18px; /* ← ЗБІЛЬШЕНО ЩЕ НАПОЛОВИНУ: 20px вертикально, 18px горизонтально */
+  }
+}
+
+.cards-container:has(.workout-list-item) .workout-list-item {
+  /* На мобільних - 1 колонка (за замовчуванням) */
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    width: calc(50% - 9px); /* ← 2 колонки на планшеті */
+  }
+
+  @media (min-width: 1440px) {
+    width: calc(50% - 9px); /* ← 2 колонки на десктопі */
+  }
+}
+
+/* ДЛЯ WORKOUT CARDS НА ГОЛОВНІЙ СТОРІНЦІ (клас workout-card) */
+.cards-container:has(.workout-card) {
+  @media (min-width: 768px) {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 20px 18px;
+  }
+}
+
+.cards-container:has(.workout-card) .workout-card {
+  @media (min-width: 768px) and (max-width: 1439px) {
+    width: calc(50% - 9px) !important;
+    max-width: calc(50% - 9px) !important;
+  }
+
+  @media (min-width: 1440px) {
+    width: calc(50% - 9px) !important;
+    max-width: calc(50% - 9px) !important;
   }
 }
 
@@ -180,27 +309,17 @@
   flex-direction: column;
   gap: 20px;
 
-  order: 2;
-
   @media (min-width: 768px) {
-    gap: 32px;
-  }
-
-  @media (min-width: 1440px) {
-    order: 1;
-    width: 444px;
-    flex-shrink: 0;
+    gap: 0px;
   }
 }
 
 .quote-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     flex-direction: row;
-    align-items: flex-start;
   }
 
   @media (min-width: 1440px) {
@@ -209,7 +328,7 @@
 }
 
 .encourage-img-container {
-  width: 100%;
+  margin-bottom: 32px;
   height: 242px;
   border-radius: 20px;
   overflow: hidden;
@@ -220,6 +339,7 @@
 
   @media (min-width: 1440px) {
     width: 444px;
+    height: 242px;
   }
 }
 
@@ -227,44 +347,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.quote-wrapper p {
-  max-width: 300px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  order: 1;
-
-  @media (min-width: 768px) {
-    gap: 32px;
-  }
-
-  @media (min-width: 1440px) {
-    order: 2;
-    width: 916px;
-  }
-}
-
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-height: 130px;
-
-  @media (min-width: 768px) {
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-start;
-    row-gap: 32px;
-  }
 }
 
 .activity-card {
@@ -288,4 +370,3 @@
     text-overflow: ellipsis;
   }
 }
-

@@ -25,13 +25,8 @@ function runPage() {
     path.endsWith('/favorites.html') ||
     path.endsWith('/GoIt-web-page/favorites.html');
 
-  if (isHome) {
-    init();
-  }
-
-  if (isFavorites) {
-    renderFavoritesItems();
-  }
+  if (isHome) init();
+  if (isFavorites) renderFavoritesItems();
 
   setActiveLink();
 
@@ -55,6 +50,14 @@ function main() {
   changeInteranlLinksBaseURL();
   renderQuoteOfTheDay();
 
+  const observer = new MutationObserver(() => {
+    if (document.querySelector('.nav-link')) {
+      setActiveLink();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
   const boot = () => runPage();
 
   if (document.readyState === 'loading') {
@@ -64,7 +67,6 @@ function main() {
   }
 
   window.addEventListener('popstate', runPage);
-
   window.addEventListener('app:navigated', runPage);
 
   mobileMenuRefs.burgerButton.addEventListener('click', mobileMenu.openMobileMenu);

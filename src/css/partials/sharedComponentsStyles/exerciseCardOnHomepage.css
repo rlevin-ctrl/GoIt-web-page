@@ -11,6 +11,43 @@
   list-style: none;
 }
 
+/* Перевизначення для category cards */
+.cards-container:has(.category-card) {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, auto) !important;
+    grid-auto-flow: row !important;
+    justify-content: start !important;
+    row-gap: 20px !important;
+    column-gap: 18px !important;
+  }
+
+  @media (min-width: 1440px) {
+    display: grid !important;
+    grid-template-columns: repeat(3, auto) !important;
+    grid-auto-flow: row !important;
+    justify-content: start !important;
+    row-gap: 20px !important;
+    column-gap: 18px !important;
+  }
+}
+
+/* Перевизначення для category cards */
+.cards-container:has(.category-card) {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, auto) !important;
+    justify-content: start !important;
+    row-gap: 20px !important;
+    column-gap: 18px !important;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(3, auto) !important;
+    justify-content: start !important;
+    row-gap: 20px !important;
+    column-gap: 18px !important;
+  }
+}
+
 .cards-container .workout-card {
   width: 440px;
   max-width: 100%;
@@ -43,6 +80,8 @@
   align-items: center;
   gap: 8px;
   padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .cards-container .star-icon {
