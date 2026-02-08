@@ -19,8 +19,8 @@
   <title>YourEnergy | Home</title>
 
   <script type="module" crossorigin src="/GoIt-web-page/assets/vendor-CLb_lYsF.js"></script>
-  <script type="module" crossorigin src="/GoIt-web-page/assets/main-Cl1SAFPT.js"></script>
-  <link rel="stylesheet" crossorigin href="/GoIt-web-page/assets/main-BqBgtiQb.css">
+  <script type="module" crossorigin src="/GoIt-web-page/assets/main-3R3wTs55.js"></script>
+  <link rel="stylesheet" crossorigin href="/GoIt-web-page/assets/main-bRHobSZo.css">
 </head>
 
 <body>
@@ -44,13 +44,14 @@
       <nav class="header-desktop-nav">
         ﻿<ul class="nav-links header">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link {= $page === 'home' ? 'active' : '' }" href="./index.html">Home</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="./favorites.html">Favorites</a>
+    <a class="nav-link {= $page === 'favorites' ? 'active' : '' }" href="./favorites.html">Favorites</a>
   </li>
 </ul>
+
       </nav>
 
       <div class="header-socials">
@@ -120,6 +121,7 @@
     </div>
   </div>
 </header>
+
 
   <main class="main">
     ﻿<section class="hero">
@@ -200,10 +202,14 @@
     </div>
 
     <div class="main-content">
+      <!-- ПРАВА ЧАСТИНА З КАРТКАМИ - ПЕРША -->
+      <div class="cards-wrapper">
+        <ul class="cards-container" id="exercise-cards-container"></ul>
+        ﻿<div id="pagination" class="pagination"></div>
+      </div>
 
-      <!-- LEFT SIDE: QUOTE + IMAGE + ACTIVITY CARD -->
+      <!-- ЛІВА ЧАСТИНА - ДРУГА -->
       <aside class="encourage-section">
-
         <div class="quote-wrapper">
           ﻿<div class="quote-day-card">
 	<span class="quote-icon-running">
@@ -260,18 +266,11 @@
             overall quality of life.
           </p>
         </div>
-
       </aside>
-
-      <div class="cards-wrapper">
-        <ul class="cards-container" id="exercise-cards-container"></ul>
-        ﻿<div id="pagination" class="pagination"></div>
-      </div>
 
     </div>
   </div>
 </section>
-
   </main>
 
   <footer class="footer">
@@ -414,7 +413,7 @@
   <div class="modal-content" id="exerciseModalContent">
 		<span class="close-button" id="closeModalBtn">
 			<svg>
-				<use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#close"></use>
+				<use href="./img/sprite.svg#close"></use>
 			</svg>
 		</span>
     <div class="modal-data">
@@ -432,19 +431,19 @@
             <span id="modalRating">4.0</span>
             <div class="stars">
               <svg class="star">
-                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+                <use href="./img/sprite.svg#star"></use>
               </svg>
               <svg class="star">
-                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+                <use href="./img/sprite.svg#star"></use>
               </svg>
               <svg class="star">
-                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+                <use href="./img/sprite.svg#star"></use>
               </svg>
               <svg class="star">
-                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+                <use href="./img/sprite.svg#star"></use>
               </svg>
               <svg class="star">
-                <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#star"></use>
+                <use href="./img/sprite.svg#star"></use>
               </svg>
             </div>
           </div>
@@ -482,7 +481,7 @@
       <button id="favoriteButton" class="modal-btn add-fav-btn" aria-label="Add to favorites">
         Add to favorites
         <svg>
-          <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#heart"></use>
+          <use href="./img/sprite.svg#heart"></use>
         </svg>
       </button>
       <button id="ratingButton" class="modal-btn add-rate-btn" aria-label="Rate this exercise">
@@ -496,7 +495,7 @@
   <div class="rating-modal" data-modal="rating">
     <button class="close-rating" data-modal-close aria-label="Close">
       <svg>
-        <use href="/GoIt-web-page/assets/sprite-E8vg0sBb.svg#close"></use>
+        <use href="./img/sprite.svg#close"></use>
       </svg>
     </button>
 
@@ -568,13 +567,14 @@
     <nav class="mobile-menu-nav">
       ﻿<ul class="nav-links mobile-menu">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Home</a>
+    <a class="nav-link {= $page === 'home' ? 'active' : '' }" href="./index.html">Home</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="./favorites.html">Favorites</a>
+    <a class="nav-link {= $page === 'favorites' ? 'active' : '' }" href="./favorites.html">Favorites</a>
   </li>
 </ul>
+
       ﻿<ul class="socials-list mobile-menu">
   <li class="socials-item">
     <a
